@@ -6,8 +6,8 @@ class App < Sinatra::Base
     erb :index
   end 
   
-  post '/checkout' do 
-    @item = params["sessions"]["item"]
+  post '/checkout', params: { id: :items } do
+    @item = params[:item]
     
     erb :checkout
   end 
